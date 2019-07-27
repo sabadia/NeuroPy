@@ -5,6 +5,6 @@ setup(name = "NeuroPy",
       description = "Library for interfacing with Neurosky's Mindwave EEG headset",
       author = "Mahamudul Hasan",
       author_email = "919.hasan@gmail.com",
-      url = "",
+      url = "https://github.com/sabadia/NeuroPy",
       packages=['NeuroPy']
       )
