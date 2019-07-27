@@ -26,8 +26,16 @@ for eg. to set a callback for attention data the syntax will be
 ### Other Variables: 
     attention, meditation, rawValue, delta, theta, lowAlpha, highAlpha, lowBeta, highBeta, lowGamma, midGamma and poorSignal
 
+### save to CSV
+    saveToCSV()
+### args that you can pass in this function
+    time #how long do you want to fetch the data
+    path #path where to save the csv file
+    mode #writing mode of the CSV file eg. w, W+, a etc
+    delay # delay for fetching next data
+
 ## Sample Program 1 (Access via callback)
-    from NeuroPy import NeuroPy
+    from NeuroPy.NeuroPy import NeuroPy
     from time import sleep
 
     neuropy = NeuroPy() 
@@ -41,7 +49,7 @@ for eg. to set a callback for attention data the syntax will be
     neuropy.start()
 
 ## Sample Program 2 (Access via object)
-    from NeuroPy import NeuroPy
+    from NeuroPy.NeuroPy import NeuroPy
     from time import sleep
 
     neuropy = NeuroPy() 
@@ -51,6 +59,15 @@ for eg. to set a callback for attention data the syntax will be
         if neuropy.meditation > 70: # Access data through object
             neuropy.stop() 
         sleep(0.2) # Don't eat the CPU cycles
+
+## Sample Program 3 (Save to csv)
+    from NeuroPy.NeuroPy import NeuroPy
+    from time import sleep
+
+    neuropy = NeuroPy() 
+    neuropy.start()
+    neuropy.saveToCSV(path="new.csv")
+    neuropy.stop()
         
 # Python Compatibility
 Python 3.x
