@@ -3,7 +3,7 @@ NeuroPy library written in python to connect, interact and get data from NeuroSk
 # Usage <br>
 
 1. Importing the module: from `NeuroPy.NeuroPy import NeuroPy` <br>
-2. Initializing: `neuropy = NeuroPy()`<br>
+2. Initializing: `neuropy = NeuroPy(port)`<br>
 3. After initializing, if required the callbacks can be set <br>
 4. Then call `neuropy.start()` method, it will start fetching data from mindwave.<br>
 5. To stop call `neuropy.stop()`<br>
@@ -38,7 +38,7 @@ for eg. to set a callback for attention data the syntax will be
     from NeuroPy.NeuroPy import NeuroPy
     from time import sleep
 
-    neuropy = NeuroPy() 
+    neuropy = NeuroPy('COM4') 
 
     def attention_callback(attention_value):
         """this function will be called everytime NeuroPy has a new value for attention"""
@@ -52,7 +52,7 @@ for eg. to set a callback for attention data the syntax will be
     from NeuroPy.NeuroPy import NeuroPy
     from time import sleep
 
-    neuropy = NeuroPy() 
+    neuropy = NeuroPy('COM4') 
     neuropy.start()
 
     while True:
@@ -64,9 +64,9 @@ for eg. to set a callback for attention data the syntax will be
     from NeuroPy.NeuroPy import NeuroPy
     from time import sleep
 
-    neuropy = NeuroPy() 
+    neuropy = NeuroPy('COM4') 
     neuropy.start()
-    neuropy.saveToCSV(path="new.csv")
+    neuropy.saveToCSV()
     neuropy.stop()
         
 # Python Compatibility
